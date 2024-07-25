@@ -43,15 +43,22 @@ private:
 	Eagle eagle;
     ScoreBoard scoreboard;   //計分板
 	StartScreen startScreen; // 起始畫面
-	
+
+	//圖片
     sf::Texture tileTexture, snakeheadTexture, snakeBodyTexture, fruitTexture1, fruitTexture2,fruitTexture3,fruitTexture4, gameOverTextTexture; // 紋理
     sf::Sprite tileSprite, snakeheadSprite, snakeBodySprite, fruitSprite1, fruitSprite2, fruitSprite3, fruitSprite4, gameOverTextSprite;    // 物件精靈
 	sf::Texture backgroundTexture, bombTexture, eagleTexture, goldTexture;
 	sf::Sprite backgroundSprite, bombSprite, eagleSprite, goldSprite;
+	
+	//字體
 	sf::Font font, font2, font3, font4, font5;
     sf::Text scoreText;
+	
+	//音效
 	sf::SoundBuffer eatSoundBuffer, bombSoundBuffer;
 	sf::Sound eatSound, bombSound;
+	
+	//背景音樂
 	sf::Music backgroundmusic;
 	sf::RectangleShape scoreBackground;
     bool isPaused; // 暫停狀態

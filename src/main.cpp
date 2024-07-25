@@ -31,10 +31,10 @@ int main() {
                 window.close();
             }
 
+			//點擊按鈕
             if (event.type == sf::Event::MouseButtonPressed) {
                 sf::Vector2f mousePos(event.mouseButton.x, event.mouseButton.y);
 
-				//選擇day or night version
                 if (!gameStarted) {
                     if (startScreen.isDayButtonClicked(mousePos)) {
                         isNightVersion = false;
@@ -65,16 +65,16 @@ int main() {
 
         window.clear();
         if (!gameStarted) {
+			//繪出起始畫面
             startScreen.draw(window);
         } else {
+			//選擇day or night version
             if (isNightVersion) {
-                Night game(window); // Assume you have a NightGame class
+                Night game(window); 
                 game.run();
-                //gameover = game; // Update the game over status
             } else {
                 Game game(window);
                 game.run();
-                //gameover = game.gameOver(); // Update the game over status
             }
         }
 		gameover = true;

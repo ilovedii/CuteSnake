@@ -24,8 +24,8 @@ Welcome to the reinvented classic Snake game, by using the Simple and Fast Multi
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/lgyeee/SnakeGame.git
-   cd SnakeGame
+   git clone https://github.com/ilovedii/CuteSnake.git
+   cd CuteSnake
    ```
 
 2. Install SFML:
@@ -51,3 +51,6 @@ Welcome to the reinvented classic Snake game, by using the Simple and Fast Multi
    ```bash
    ./build/SnakeGame
    ```
+
+---
+Enjoy playing the game ~

@@ -34,6 +34,7 @@ int main() {
             if (event.type == sf::Event::MouseButtonPressed) {
                 sf::Vector2f mousePos(event.mouseButton.x, event.mouseButton.y);
 
+				//選擇day or night version
                 if (!gameStarted) {
                     if (startScreen.isDayButtonClicked(mousePos)) {
                         isNightVersion = false;
@@ -44,7 +45,7 @@ int main() {
                     }
                 } else if (gameover) {
 					while(true){};
-                    // Check if the "Game Over" image is clicked
+                    // 確認是否gameover
                     if (isNightVersion) {
                         Night game(window);
                         if (game.isGameoverClicked(mousePos)) {

@@ -1,12 +1,14 @@
 #include "../include/StartScreen.h"
 #include <SFML/System/Vector2.hpp>
 
+//Startscreen的像素自體
 StartScreen::StartScreen(float width, float height) {
     if (!font.loadFromFile("assets/fonts/font_p.ttf")) {
         // Handle error
         printf("Failed to load font\n");
     }
 
+	//設定自體、圖片等
     title.setFont(font);
     title.setString("Snake");
     title.setCharacterSize(100);
@@ -79,6 +81,7 @@ StartScreen::StartScreen(float width, float height) {
 
 }
 
+//畫出畫面
 void StartScreen::draw(sf::RenderWindow& window) {
     window.draw(backgroundSprite); // 背景
     window.draw(title);
@@ -90,10 +93,12 @@ void StartScreen::draw(sf::RenderWindow& window) {
 	window.draw(snakepicSprite);
 }
 
+//點擊day按鈕->day version
 bool StartScreen::isDayButtonClicked(sf::Vector2f mousePos) {
     return dayButton.getGlobalBounds().contains(mousePos);
 }
 
+//點擊night按鈕->night version
 bool StartScreen::isNightButtonClicked(sf::Vector2f mousePos) {
     return nightButton.getGlobalBounds().contains(mousePos);
 }

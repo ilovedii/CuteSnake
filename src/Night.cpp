@@ -12,7 +12,7 @@ const int WINDOW_HEIGHT = TILE_SIZE * GRID_HEIGHT; // 窗口高度
 static int choice = 0;
 int cool_stuff = 0;
 
-// 建構函數：初始化遊戲窗口和元件
+// 建構函數：初始化遊戲(黑夜版本)窗口和元件
 Night::Night(sf::RenderWindow& window) :
 	snake(),
 	fruit(),
@@ -234,8 +234,8 @@ void Night::update() {
 
 		choice = rand()%4;
 	}
-
-	// 如果蛇吃到金子或炸彈
+	 
+	//如果蛇碰到金塊或炸彈
 	if (snake.getHeadPosition() == sf::Vector2i(hard.getX(), hard.getY()) ||  snake.getHeadPosition() == sf::Vector2i(hard.getX()+1, hard.getY()) || snake.getHeadPosition() == sf::Vector2i(hard.getX(), hard.getY()+1) || snake.getHeadPosition() == sf::Vector2i(hard.getX()+1, hard.getY()+1)) {
 		std::srand(static_cast<unsigned>(std::time(0)));
 		hard.respawn();
@@ -258,10 +258,9 @@ void Night::update() {
 	}
 
 	//老鷹飛飛
-	//eagle.respawn();
 
 	if (snake.getHeadPosition() == sf::Vector2i(eagle.getX(), eagle.getY()) || snake.getHeadPosition() == sf::Vector2i(eagle.getX(), eagle.getY() +1) || snake.getHeadPosition() == sf::Vector2i(eagle.getX() +1, eagle.getY()) || snake.getHeadPosition() == sf::Vector2i(eagle.getX() +1, eagle.getY() +1 ) || snake.getHeadPosition() == sf::Vector2i(eagle.getX()+2, eagle.getY()+2) || snake.getHeadPosition() == sf::Vector2i(eagle.getX()+2, eagle.getY()) || snake.getHeadPosition() == sf::Vector2i(eagle.getX(), eagle.getY()+2)||snake.getHeadPosition() == sf::Vector2i(eagle.getX() +1, eagle.getY() +2) || snake.getHeadPosition() == sf::Vector2i(eagle.getX() +2, eagle.getY() +1)) {
-		scoreboard.increaseScore(-20);
+		scoreboard.increaseScore(-150);
 		if(scoreboard.getScore() < 0 ){
 				gameOver = true;
 				return;
@@ -296,7 +295,6 @@ void Night::render() {
 	}
 
 	// 繪製水果
-
 	if(fruit.getX() != hard.getX() || fruit.getY() != hard.getY()){
 		if(choice == 0){
 			fruitSprite1.setPosition(fruit.getX() * TILE_SIZE, fruit.getY() * TILE_SIZE);
@@ -317,7 +315,7 @@ void Night::render() {
 
 		}
 
-		//繪製炸彈
+		//繪製金塊或炸彈
 		if(cool_stuff == 0){
 			bombSprite.setPosition(hard.getX() * TILE_SIZE, hard.getY() * TILE_SIZE);
 			window.draw(bombSprite);
@@ -327,7 +325,6 @@ void Night::render() {
 		}
 
 		//繪製老鷹
-		//sf::Vector2i eaglePos = eagle.getPosition();
     	eagleSprite.setPosition(eagle.getX() * TILE_SIZE, eagle.getY() * TILE_SIZE);
     	window.draw(eagleSprite);
 	}
@@ -381,6 +378,7 @@ void Night::reset() {
 	backgroundmusic.setPlayingOffset(sf::seconds(3.5));
 	backgroundmusic.play();
 }
+
 
 bool Night::isGameoverClicked(sf::Vector2f mousePos){
 	return gameOverTextSprite.getGlobalBounds().contains(mousePos);

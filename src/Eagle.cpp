@@ -33,33 +33,14 @@ void Eagle::move(int screenWidth, int screenHeight) {
 	x += dx;
     y += dy;
 
-    /*int direction = std::rand() % 4;
-    switch (direction) {
-        case 0: // 向左移動
-            x = (x > 0) ? x - 1 : 29;
-            break;
-        case 1: // 向右移動
-            x = (x < 29) ? x + 1 : 0;
-            break;
-        case 2: // 向上移動
-            y = (y > 0) ? y - 1 : 29;
-            break;
-        case 3: // 向下移動
-            y = (y < 29) ? y + 1 : 0;
-            break;
-    }*/
-
-
+   
+	//撞到上界或下界
 	if (x <= 0 || x >= 29 - 1) {
         dx = -dx;
     }
-    // 撞到上或下界
     if (y <= 0 || y >= 29 - 1) {
         dy = -dy;
     }
 }
 
-/*sf::Vector2i Eagle::getPosition() const {
-    return ;
-}*/
 

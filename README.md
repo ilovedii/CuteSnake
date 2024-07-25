@@ -75,25 +75,27 @@ Welcome to the reinvented classic Snake game, by using the Simple and Fast Multi
 │   ├── Game.cpp       # Main game logic
 │   ├── Snake.cpp      # Snake class implementation
 │   ├── Fruit.cpp      # Fruit class implementation
+│   ├── Eagle.cpp      # Eagle class implementation
+│   ├── Night.cpp      # Night mode logic
+│   ├── Hard.cpp       # Additional difficulty logic
+│   ├── ScoreBoard.cpp # Scoreboard implementation
+│   ├── StartScreen.cpp# Start screen logic
 ├── include            # Header files
 │   ├── Game.h         # Game class declaration
 │   ├── Snake.h        # Snake class declaration
 │   ├── Fruit.h        # Fruit class declaration
+│   ├── Eagle.h        # Eagle class declaration
+│   ├── Night.h        # Night mode declaration
+│   ├── Hard.h         # Additional difficulty declaration
+│   ├── ScoreBoard.h   # Scoreboard declaration
+│   ├── StartScreen.h  # Start screen declaration
 ├── assets             # Assets for the game
 │   ├── fonts          # Font files
-│   │   └── font.ttf
 │   ├── sounds         # Sound effect files
-│   │   ├── move.wav
-│   │   ├── eat.wav
-│   │   └── gameover.wav
 │   └── textures       # Texture files
-│       ├── snake_head.png
-│       ├── snake_head.png
-│       ├── snake_head.png
-│       └── fruit.png
-│
 └── build              # Compiled binary and object files
     └── SnakeGame      # Executable file
+
 ```
 
 ---

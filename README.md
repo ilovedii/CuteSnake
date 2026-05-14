@@ -13,6 +13,9 @@ Welcome to the reinvented classic Snake game, by using the Simple and Fast Multi
 - Dynamic Challenges: Encounter eagles, bombs, and gold for an added layer of excitement.
   - Eagles: Bumping into an eagle decreases your score, but the eagle will fly away.
   - Bombs and Gold: Both items appear randomly; collecting them will increase your score.
+
+## Demo Video
+🎬 [Watch the demo video](https://www.youtube.com/watch?v=-wT5_TQLgpA)
   
 ## Requirments
 - C++11 or higher
